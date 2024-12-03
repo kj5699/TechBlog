@@ -1,0 +1,27 @@
+---
+const podcasts = [
+    {
+        title: "Tech Talk 101",
+        description: "A deep dive into the world of engineering and tech.",
+        youtubeUrl: "https://youtube.com/example-podcast1",
+        tags: ["Engineering", "Tech"],
+    },
+    {
+        title: "Codecasts",
+        description: "All things code and programming.",
+        youtubeUrl: "https://youtube.com/example-podcast2",
+        tags: ["Programming", "Tutorials"],
+    },
+];
+---
+
+<ul>
+    {podcasts.map((podcast) => (
+            <li>
+                <h3>{podcast.title}</h3>
+                <p>{podcast.description}</p>
+                <a href={podcast.youtubeUrl} target="_blank">Watch on YouTube</a>
+                <p>Tags: {podcast.tags.join(", ")}</p>
+            </li>
+    ))}
+</ul>

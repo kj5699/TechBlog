@@ -1,0 +1,13 @@
+---
+// BlogLayout.astro
+import Header from '../UI/Header'
+const { title, date } = Astro.props;
+console.log(title, date);
+---
+
+<article>
+    <Header/>
+    <main>
+        <slot />
+    </main>
+</article>
