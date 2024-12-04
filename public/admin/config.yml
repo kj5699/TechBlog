@@ -1,3 +1,11 @@
+backend:
+  name: github # Type of backend (can also be "github", "gitlab", etc.)
+  repo: kj5699/TechBlog  # Replace with your GitHub repo (e.g., "johnsmith/my-blog")
+  branch: main               # The branch to which CMS changes are committed
+  auth_scope: repo             # Your repository's default branch
+
+media_folder: "public/assets" # Where images/files are stored in your repo
+public_folder: "/public"
 collections:
   - name: "blog" # Used in routes, e.g., /admin/collections/blog
     label: "Blog" # Used in the UI
@@ -7,6 +15,4 @@ collections:
       - { label: "Layout", name: "layout", widget: "hidden", default: "blog" }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Featured Image", name: "thumbnail", widget: "image" }
-      - { label: "Rating (scale of 1-5)", name: "rating", widget: "number" }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Body", name: "body", widget: "quill" }

@@ -1,4 +1,3 @@
-import React from "react";
 const IntroCard = ({ title, slug, imageUrl="", tags }) => {
     return (
         <div style={styles.card}>
