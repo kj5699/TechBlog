@@ -13,7 +13,7 @@
     "@astrojs/check": "^0.9.4",
     "@astrojs/netlify": "^6.0.0",
     "@astrojs/react": "^3.6.3",
-    "astro": "^4.16.15",
+    "astro": "^5.0.4",
     "decap-cms": "^3.4.0",
     "decap-cms-app": "^3.4.0",
     "quill": "^2.0.3",
