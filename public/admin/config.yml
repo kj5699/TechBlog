@@ -3,10 +3,9 @@ backend:
   repo: kj5699/TechBlog  # Replace with your GitHub repo (e.g., "johnsmith/my-blog")
   branch: main               # The branch to which CMS changes are committed
   auth_scope: repo
-  publish_mode: editorial_workflow
   # Your repository's default branch
-
-media_folder: "public/assets" # Where images/files are stored in your repo
+publish_mode: editorial_workflow
+media_folder: "public/assets/" # Where images/files are stored in your repo
 public_folder: "/public"
 collections:
   - name: "blog" # Used in routes, e.g., /admin/collections/blog
@@ -18,3 +17,19 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Body", name: "body", widget: "markdown" }
+
+
+  - name: "podcast" # Used in routes, e.g., /admin/collections/blog
+    label: "Podcast" # Used in the UI
+    folder: "src/content/podcasts" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields for each document, usually in frontmatter
+      - { label: "Layout", name: "layout", widget: "hidden", default: "blog" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Link", name: "link", widget: "string" }
+      - { label: "Featured Image",
+            name: "thumbnail",
+            widget: "image",
+            choose_url: true,
+        }
