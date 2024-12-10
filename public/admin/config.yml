@@ -4,7 +4,7 @@ backend:
   branch: staging               # The branch to which CMS changes are committed
   auth_scope: repo
   # Your repository's default branch
-publish_mode: editorial_workflow
+#publish_mode: editorial_workflow
 media_folder: "public/assets/" # Where images/files are stored in your repo
 public_folder: "/public"
 collections:
