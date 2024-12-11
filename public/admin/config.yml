@@ -4,19 +4,22 @@ backend:
   branch: staging               # The branch to which CMS changes are committed
   auth_scope: repo
   # Your repository's default branch
-#publish_mode: editorial_workflow
+publish_mode: editorial_workflow
 media_folder: "public/assets/" # Where images/files are stored in your repo
 public_folder: "/public"
 collections:
   - name: "blog" # Used in routes, e.g., /admin/collections/blog
     label: "Blog" # Used in the UI
     folder: "src/content/blogs" # The path to the folder where the documents are stored
-    create: true # Allow users to create new documents in this collection
+    create: true
+    slug: "{{slug}}"
+    preview_path: "https://{{slug}}--tech-blog-d11.netlify.app" # Allow users to create new documents in this collection
     fields: # The fields for each document, usually in frontmatter
       - { label: "Layout", name: "layout", widget: "hidden", default: "blog" }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Body", name: "body", widget: "markdown" }
+      - { name: state, label: State, widget: hidden, default: "Draft" }
 
 
   - name: "podcast" # Used in routes, e.g., /admin/collections/blog
